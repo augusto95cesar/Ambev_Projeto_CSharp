@@ -1,26 +1,20 @@
 ﻿@model Funcionarios_Ambev.Models.Funcionario
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Create";
 }
-
-<h2>Edit</h2>
-
-
-@using (Html.BeginForm())
+@using (Html.BeginForm("SalvarCadastro","Funcionarios"))
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>Funcionario</h4>
+        <h4>Cadastro de Funcionairo</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.ID)
-
         <div class="form-group">
             @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control", @type="text" } })
                 @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -28,21 +22,26 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Idade, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Idade, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Idade, new { htmlAttributes = new { @class = "form-control", @type = "text" } })
                 @Html.ValidationMessageFor(model => model.Idade, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Salvar" class="btn btn-success" style = "width:100%" } />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Voltar", "Index")
+</div>
+
+<link href="~/Content/Site.css" rel="stylesheet" />
+<div id="boxImagem">
+    <img width="60%" height="100%" src="~/img/ambev.png" />
 </div>
 
 @section Scripts {

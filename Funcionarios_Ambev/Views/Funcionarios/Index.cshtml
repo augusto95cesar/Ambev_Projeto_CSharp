@@ -4,11 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<h2>Funcionarios</h2>
 <table class="table">
     <tr>
         <th>
@@ -20,20 +16,27 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Idade)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Idade)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Editar", new { id = item.ID }, new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("Deletar", "Deletar", new { id = item.ID }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
 
 </table>
+<p>
+    @Html.ActionLink("Cadastrar Novo Funcionario Funcionario", "Cadastrar", "", new { @class = "btn btn-success", @style = "width:100%" })
+</p>
+<link href="~/Content/Site.css" rel="stylesheet" />
+<div id="boxImagem">
+    <img width="60%" height="100%" src="~/img/ambev.png" />
+</div>

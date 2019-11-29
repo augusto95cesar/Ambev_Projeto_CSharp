@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-
 namespace Funcionarios_Ambev.Models
 {
     [Table("dbo.Funcioanrio")]

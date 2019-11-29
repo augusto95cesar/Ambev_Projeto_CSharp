@@ -22,3 +22,10 @@ select,
 textarea {
     max-width: 280px;
 }
+#boxImagem{
+    overflow:hidden;
+    height:150px;
+    text-align:center;
+    padding:10px;
+    
+}
